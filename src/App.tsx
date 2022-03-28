@@ -9,10 +9,10 @@ const App: FC = () => {
         <div className='inputContainer'>
           <input type='text' placeholder='Task...'></input>
           <input type='number' placeholder='Deadline (in days)'></input>
-          <button>Add task</button>
         </div>
+          <button>Add task</button>
       </div>
-      <div className='ltodoList'></div>
+      <div className='todoList'></div>
     </div>
   );
 }
