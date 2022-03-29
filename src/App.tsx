@@ -1,5 +1,4 @@
 import React, {ChangeEvent, FC, useState} from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 const App: FC = () => {
@@ -7,14 +6,21 @@ const App: FC = () => {
   const [deadline, setDeadline] = useState<number>(0)
   const [todo, setTodoList] = useState([])
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {}
+  // return type void because not returning anything
+  const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
+    if (event.target.name === 'task') {
+      setTask(event.target.value)
+    } else {
+      setDeadline(Number(event.target.value))
+    }
+  }
 
   return (
     <div className="App">
       <div className='header'>
         <div className='inputContainer'>
-          <input type='text' placeholder='Task...' onChange={handleChange}></input>
-          <input type='number' placeholder='Deadline (in days)'></input>
+          <input type='text' placeholder='Task...' name='task' onChange={handleChange}></input>
+          <input type='number' placeholder='Deadline (in days)' name='deadline'></input>
         </div>
           <button>Add task</button>
       </div>
