@@ -10,9 +10,11 @@ const TodoTask = ({task}: Props) => {
 		<div className="task">
 			<div className="content">
 				<span>{task.taskName}</span>
+			</div>
+			<div className='deadline'>
 				<span>{task.deadline}</span>
 			</div>
-			<button>X</button>
+			<button className='button'>X</button>
 		</div>
 	)
 }
